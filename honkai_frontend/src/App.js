@@ -1,6 +1,7 @@
-import DetailsIndex from "./features/character_details/components/DetailsIndex";
+import CharacterDetails from "./features/character_details/components/CharacterDetails";
+
 function App() {
-  return <DetailsIndex />;
+  return <CharacterDetails />;
 }
 
 export default App;
