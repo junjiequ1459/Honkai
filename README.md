@@ -20,3 +20,4 @@ Welcome to the Honkai Star Rail UI/UX project! This project aims to bring the st
 - Render
 - FontAwesome
 - Webpack
+- Three.js
