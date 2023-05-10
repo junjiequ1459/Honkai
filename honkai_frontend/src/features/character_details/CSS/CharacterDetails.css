@@ -18,7 +18,6 @@ html {
 }
 
 .character-stats {
-  position: relative;
   z-index: 1;
   margin: 50px;
   padding: 20px;

@@ -6,14 +6,14 @@ import GalaxyBackground from "./GalaxyBackground";
 
 function CharacterDetails() {
   const dispatch = useDispatch();
-  const character = useSelector((state) => state.characters[1]);
+  const character = useSelector((state) => state.characters[1]); //selects character based on id form the state
 
   useEffect(() => {
     dispatch(fetchCharacter(1));
   }, [dispatch]);
 
   if (!character) {
-    return <div>Loading...</div>;
+    return <div>Loading...</div>;   // loading screen until use selector is loaded
   }
 
   return (

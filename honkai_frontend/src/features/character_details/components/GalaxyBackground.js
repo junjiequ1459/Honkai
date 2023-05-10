@@ -22,8 +22,8 @@ const GalaxyBackground = () => {
     const controls = new OrbitControls(camera, renderer.domElement);
     controls.enablePan = false;
     controls.enableRotate = true;
-    controls.minPolarAngle = Math.PI / 2; // set the minimum polar angle to 90 degrees (horizontal)
-    controls.maxPolarAngle = Math.PI / 2; // set the maximum polar angle to 90 degrees (horizontal)
+    controls.minPolarAngle = Math.PI / 2; // removes vertical movement for camera
+    controls.maxPolarAngle = Math.PI / 2;
     controls.enableZoom = true; // enable zooming in and out
     controls.enableDamping = true; // enable damping for touchpad zooming
 
@@ -46,9 +46,10 @@ const GalaxyBackground = () => {
     // set up a rotation animation for the sphere
     function animate() {
       requestAnimationFrame(animate);
-      controls.update(); // update the controls for damping
+      controls.update(); // smooths movement for user movement
       renderer.render(scene, camera);
     }
+
     animate();
 
     // handle window resize
