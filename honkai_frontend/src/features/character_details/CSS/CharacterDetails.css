@@ -1,0 +1,27 @@
+ul {
+  list-style: none;
+}
+body,
+html {
+  margin: 0;
+  padding: 0;
+  background-color: transparent;
+}
+
+.galaxy-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+}
+
+.character-stats {
+  position: relative;
+  z-index: 1;
+  margin: 50px;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 10px;
+}

@@ -1,6 +1,8 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchCharacter } from "../../../store/actions/characterActions";
+import "../CSS/CharacterDetails.css";
+import GalaxyBackground from "./GalaxyBackground";
 
 function CharacterDetails() {
   const dispatch = useDispatch();
@@ -16,40 +18,25 @@ function CharacterDetails() {
 
   return (
     <div>
-      <h1>{character.name}</h1>
-      <p>Class: {character.character_class}</p>
-      <p>Level: {character.level}</p>
-      <p>Stats:</p>
-      <ul>
-        <li>Attack: {character.stats.attack}</li>
-        <li>HP: {character.stats.hp}</li>
-        <li>Defense: {character.stats.defense}</li>
-        <li>Speed: {character.stats.speed}</li>
-        <li>Crit Rate: {character.stats.crit_rate}</li>
-        <li>Crit DMG: {character.stats.crit_dmg}</li>
-      </ul>
-      <p>Skills:</p>
-      <ul>
-        {character.skills.map((skill) => (
-          <li key={skill}>{skill}</li>
-        ))}
-      </ul>
-      <p>Traces:</p>
-      <ul>
-        {character.traces.map((trace) => (
-          <li key={trace.name}>
-            {trace.name}: {trace.effect}
-          </li>
-        ))}
-      </ul>
-      <p>Eidolons:</p>
-      <ul>
-        {Object.entries(character.eidolons).map(([name, level]) => (
-          <li key={name}>
-            {name}: {level}
-          </li>
-        ))}
-      </ul>
+      <div className="galaxy-background">
+        <GalaxyBackground />
+      </div>
+      <div className="character-stats">
+        <h1>{character.name}</h1>
+        <p>{character.character_class}</p>
+        <p>
+          Lv.{character.level}/{character.level}
+        </p>
+        <p>Stats:</p>
+        <ul>
+          <li>ATK: {character.stats.attack}</li>
+          <li>HP: {character.stats.hp}</li>
+          <li>DEF: {character.stats.defense}</li>
+          <li>SPD: {character.stats.speed}</li>
+          <li>Crit Rate: {character.stats.crit_rate * 100}%</li>
+          <li>Crit DMG: {character.stats.crit_dmg * 100}%</li>
+        </ul>
+      </div>
     </div>
   );
 }
