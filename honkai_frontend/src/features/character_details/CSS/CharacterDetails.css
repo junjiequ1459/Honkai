@@ -1,4 +1,3 @@
-
 .galaxy-background {
   position: absolute;
   top: 0;
@@ -8,9 +7,20 @@
   z-index: -1;
 }
 
-.character-stats {
+.character-details-container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 25%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
   z-index: 1;
-  margin: 50px;
+}
+
+.character-stats {
+  width: 100%;
   padding: 20px;
   background-color: rgba(255, 255, 255, 0.8);
   border-radius: 10px;
