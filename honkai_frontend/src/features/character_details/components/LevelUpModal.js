@@ -1,8 +1,8 @@
 import Modal from "../../utils/Modal";
 import React, { useState } from "react";
-import "../CSS/ElementsModal.css";
+import "../CSS/LevelUpModal.css";
 
-function ElementsModal() {
+function LevelUpModal() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const openModal = () => {
     setIsModalOpen(true);
@@ -14,14 +14,14 @@ function ElementsModal() {
   return (
     <>
       <div className="element-container">
-        <i class="fa fa-fire" onClick={openModal}></i>
+        <i class="fa fa-search" onClick={openModal}></i>
         <Modal isOpen={isModalOpen} onClose={closeModal}>
           <h2>Modal Content</h2>
-          <p>This is the content of the modal ELEMENT MODAL.</p>
+          <p>This is the content of the modal LevelUp Modal.</p>
         </Modal>
       </div>
     </>
   );
 }
 
-export default ElementsModal;
+export default LevelUpModal;

@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchCharacter } from "../../../store/actions/characterActions";
 import MoreStatsModal from "./MoreStatsModal";
 import ElementsModal from "./ElementsModal";
+import LevelUpModal from "./LevelUpModal";
 function CharacterStats() {
   const dispatch = useDispatch();
   const character = useSelector((state) => state.characters[1]); // selects character based on id from the state
@@ -26,12 +27,15 @@ function CharacterStats() {
       <div className="character-details-container">
         <div className="character-stats">
           <h1>{character.name}</h1>
-          <p>{character.character_class}</p>
+          <div class="level-search-container">
+            <p>{character.character_class}</p>
+            <ElementsModal />
+          </div>
           <div class="level-search-container">
             <div>
               Lv.{character.level}/{character.level}
             </div>
-            <ElementsModal />
+            <LevelUpModal />
           </div>
 
           <div className="character-stats-buttons">
