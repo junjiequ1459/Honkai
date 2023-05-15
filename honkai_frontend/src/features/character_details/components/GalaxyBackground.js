@@ -2,6 +2,8 @@ import React, { useEffect, useRef } from "react";
 import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 import galaxy from "../../../assets/galaxy.png";
+import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
+import korone from "../../../assets/scene2.glb";
 
 const GalaxyBackground = () => {
   const containerRef = useRef(null);
@@ -74,8 +76,28 @@ const GalaxyBackground = () => {
     disk.receiveShadow = true;
 
     // position the camera inside the sphere
-    camera.position.set(0, 0, 500);
+    camera.position.set(0, 0, 5);
     // set up a rotation animation for the sphere
+
+    // Add lighting to the scene
+    const light = new THREE.DirectionalLight(0xffffff, 1);
+    light.position.set(1, 1, 1);
+    scene.add(light);
+
+    // Load the glTF scene
+    const loader = new GLTFLoader();
+
+    loader.load(korone, function (gltf) {
+      // Handle successful loading
+      const loadedData = gltf.scene;
+      loadedData.scale.set(80, 80, 80);
+      loadedData.position.y = -180; // Adjust the value as needed
+      loadedData.position.z = 80; // Adjust the value as needed
+
+      scene.add(loadedData);
+
+      // ...
+    });
 
     function animate() {
       requestAnimationFrame(animate);
