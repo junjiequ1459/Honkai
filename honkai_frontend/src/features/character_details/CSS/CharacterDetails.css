@@ -20,8 +20,40 @@
 }
 
 .character-stats {
+  display: flex;
+  flex-direction: column;
   width: 100%;
   padding: 20px;
-  background-color: rgba(255, 255, 255, 0.8);
-  border-radius: 10px;
+  background-color: gray;
+  color: white;
+}
+
+.character-stats ul {
+  list-style: none;
+  padding: 0;
+}
+.stats-button {
+  padding: 5px;
+  width: 100%;
+  border: none;
+  border-radius: 20px;
+  background: linear-gradient(to right, darkgray 50%, gray 50%);
+}
+
+.stats-button-active {
+  background: linear-gradient(to right, gray 50%, darkgray 50%);
+}
+
+.stats-skills-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.level-search-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.level-search-container > div {
+  margin-right: 10px;
 }
