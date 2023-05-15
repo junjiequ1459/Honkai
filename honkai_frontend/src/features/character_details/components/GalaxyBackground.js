@@ -3,7 +3,8 @@ import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 import galaxy from "../../../assets/galaxy.png";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
-import korone from "../../../assets/scene2.glb";
+import Korone from "../../../assets/korone.glb";
+import Seele from "../../../assets/pekora.glb";
 
 const GalaxyBackground = () => {
   const containerRef = useRef(null);
@@ -87,7 +88,7 @@ const GalaxyBackground = () => {
     // Load the glTF scene
     const loader = new GLTFLoader();
 
-    loader.load(korone, function (gltf) {
+    loader.load(Korone, function (gltf) {
       // Handle successful loading
       const loadedData = gltf.scene;
       loadedData.scale.set(80, 80, 80);

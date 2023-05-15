@@ -79,3 +79,26 @@ seele = Character.create(
     "Shattering Shambles": 6,
   },
 )
+
+korone = Character.create(
+  name: "Korone",
+  character_class: "Unknown",
+  level: 1,
+  stats: {
+    attack: rand(100..500),
+    hp: rand(1000..5000),
+    defense: rand(50..200),
+    speed: rand(100..200),
+    crit_rate: rand(0.1..0.9).round(2),
+    crit_dmg: rand(1.5..2.5).round(2),
+    break_effect: rand(0.1..0.5).round(2),
+    outgoing_healing_boost: rand(0.1..0.5).round(2),
+    max_energy: rand(100..200),
+    energy_regen_rate: rand(0.05..0.15).round(2),
+    effect_hit_rate: rand(0.1..0.9).round(2),
+    effect_res: rand(0.1..0.9).round(2),
+  },
+  skills: [],
+  traces: [],
+  eidolons: {},
+)

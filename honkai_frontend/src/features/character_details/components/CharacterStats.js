@@ -4,14 +4,20 @@ import { fetchCharacter } from "../../../store/actions/characterActions";
 import MoreStatsModal from "./MoreStatsModal";
 import ElementsModal from "./ElementsModal";
 import LevelUpModal from "./LevelUpModal";
+import GalaxyBackground from "./GalaxyBackground";
+
+
 function CharacterStats() {
   const dispatch = useDispatch();
-  const character = useSelector((state) => state.characters[1]); // selects character based on id from the state
+  const characterNumber = useSelector((state) => state.navbar);
+  const character = useSelector(
+    (state) => state.characters[characterNumber.number]
+  ); // selects character based on id from the state
   const [isStatsButtonActive, setIsStatsButtonActive] = useState(true); // Track the active state
 
   useEffect(() => {
-    dispatch(fetchCharacter(1));
-  }, [dispatch]);
+    dispatch(fetchCharacter(characterNumber.number));
+  }, [dispatch, characterNumber]);
 
   if (!character) {
     return <div>Loading...</div>; // loading screen until useSelector is loaded
@@ -23,7 +29,8 @@ function CharacterStats() {
 
   return (
     <>
-      s
+      <GalaxyBackground />
+
       <div className="character-details-container">
         <div className="character-stats">
           <h1>{character.name}</h1>
