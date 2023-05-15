@@ -37,11 +37,11 @@
   width: 100%;
   border: none;
   border-radius: 20px;
-  background: linear-gradient(to right, darkgray 50%, gray 50%);
+  background: linear-gradient(to right, gray 50%, darkgray 50%);
 }
 
 .stats-button-active {
-  background: linear-gradient(to right, gray 50%, darkgray 50%);
+  background: linear-gradient(to right, darkgray 50%, gray 50%);
 }
 
 .stats-skills-container {
